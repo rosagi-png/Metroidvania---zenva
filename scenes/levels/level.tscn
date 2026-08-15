@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://ctbwewrrmew3"]
+
+[node name="Level" type="Node2D" unique_id=286159753]
+
+[node name="Layers" type="Node2D" parent="." unique_id=1637556606]
+
+[node name="Entities" type="Node2D" parent="." unique_id=22582381]

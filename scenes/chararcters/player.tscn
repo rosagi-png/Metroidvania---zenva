@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://c03ta6bmxi84h"]
+
+[ext_resource type="Texture2D" uid="uid://de5wf7al0hknv" path="res://graphics/characters/player.png" id="1_4sqeo"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g4v7s"]
+radius = 6.0
+height = 34.0
+
+[node name="Player" type="CharacterBody2D" unique_id=1468672255]
+
+[node name="Torso" type="Sprite2D" parent="." unique_id=560235014]
+texture_filter = 1
+position = Vector2(0, -9)
+texture = ExtResource("1_4sqeo")
+hframes = 8
+vframes = 5
+
+[node name="Legs" type="Sprite2D" parent="." unique_id=1569029750]
+texture_filter = 1
+position = Vector2(0, -6)
+texture = ExtResource("1_4sqeo")
+hframes = 8
+vframes = 5
+frame = 24
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2089424058]
+shape = SubResource("CapsuleShape2D_g4v7s")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=339946002]
+zoom = Vector2(4, 4)
