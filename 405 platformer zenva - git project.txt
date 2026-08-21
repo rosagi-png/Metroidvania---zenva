@@ -1,0 +1,112 @@
+25/07/26 state library
+
+4:05 platformer zenva - git/ project setup
+
+
+4:30: 
+Unzipped zenva resource folder (used included zenva .gitignore)  
+
+	- added .import/  (excludes automatically generated cache files, eg textures, sounds, models compressed for local optimization)
+
+
+Created repo on 'Metroidvania - zenva' (Github desktop )
+
+
+Godot - project created at starter kit folder - unchecked create folder
+
+
+Repo - commited 49 files (starter kit files) , pushed to origin
+
+4:35pm (30mins)
+
+___________________
+
+15/08
+3:45: state library godot, git desktop
+
+basic level node setup:
+
+Level
+	Layers 
+		*-TileMapLayer
+	Entities
+
+
+Inspector: create new Tile Set > Physics Layers
+
+Tile Sources: Paint > select property editor [ Physics Layer 0]
+
+paint physics block 
+
+	under Tiles - paint tool 
+
+		shift + select blocks, draw onto canvas
+
+4:25 STOP , 40 min,
+
+CharacterBody2d
+
+	Sprite
+	Sprite
+
+	CollisionShape2D
+
+Key sprite controls /frame coordinates:
+
+	Animation> Hframes/Vframes
+			> Frame Coords
+
+	Transform: Position
+			X
+			Y
+
+Sprite2D	> Texture
+
+4:53pm
+
+mADE TEST SCENE, deactivated visible physic under (DEBUG)
+
+5:01 
+
+pushed to origin
+
+5:05 (1hr 20min)
+
+
+5:00 pm 21.08
+
+player movement
+
+var dir_x: float
+export var speed :=
+var grav = 100
+
+func get_input():
+	dir_x = input =/-
+
+func _physics(_time: float):
+	get_input()
+	vel_x = dir_x * speed
+
+	if not on floor():
+		vel_y += grav *delta
+	
+	move_and_slide()
+
+
+characterBody2d
+
+var direction_x: float
+@export var speed := speed   (:= default value)
+var gravity = 200
+
+func get_input():
+	direction_x = Input.get_axis("left, right")
+
+
+func _physics_process(_delta: float) -> void:
+	get_input()
+	velocity.x = direction_x * speed
+	if not is on floor():
+		velocity.y += gravity * delta
+	move_and_slide()
