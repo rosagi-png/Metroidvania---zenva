@@ -146,3 +146,4 @@ opened prject successfully (GODOT 4.7)
 project settigns> input map, physics layers and default rendering 'nearest' updated
 
 // x motion not working, jump not working *gravity works though
+	** Input button not activated in play/preview window
