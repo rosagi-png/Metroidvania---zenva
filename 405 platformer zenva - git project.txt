@@ -135,3 +135,14 @@ func _physics_process(time: float)
 	if not is
 
 //multiple missing : 'then'
+
+
+// on linux ver 4.6 error project 'missing'
+
+*replaced .godot folder, replaced project.godot (with fresh 4.6)
+
+opened prject successfully (GODOT 4.7)
+
+project settigns> input map, physics layers and default rendering 'nearest' updated
+
+// x motion not working, jump not working *gravity works though

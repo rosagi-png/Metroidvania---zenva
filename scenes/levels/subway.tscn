@@ -481,5 +481,5 @@ tile_set = SubResource("TileSet_g4v7s")
 [node name="Entities" type="Node2D" parent="." unique_id=22582381]
 
 [node name="Player" parent="Entities" unique_id=1468672255 instance=ExtResource("2_6c57m")]
-position = Vector2(23, 2)
+position = Vector2(26, -12)
 script = ExtResource("3_kq76o")
