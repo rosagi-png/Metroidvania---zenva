@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://c7v0ifpdabs2i" path="res://graphics/tilesets/subway.png" id="1_1eclv"]
 [ext_resource type="PackedScene" uid="uid://c03ta6bmxi84h" path="res://scenes/chararcters/player.tscn" id="2_6c57m"]
+[ext_resource type="Script" uid="uid://bo20rfcayu217" path="res://scenes/chararcters/player.gd" id="3_kq76o"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1eclv"]
 texture = ExtResource("1_1eclv")
@@ -481,3 +482,4 @@ tile_set = SubResource("TileSet_g4v7s")
 
 [node name="Player" parent="Entities" unique_id=1468672255 instance=ExtResource("2_6c57m")]
 position = Vector2(23, 2)
+script = ExtResource("3_kq76o")

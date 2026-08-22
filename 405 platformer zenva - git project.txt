@@ -110,3 +110,28 @@ func _physics_process(_delta: float) -> void:
 	if not is on floor():
 		velocity.y += gravity * delta
 	move_and_slide()
+
+
+
+615 22/8recap /test
+body2d
+
+var dir_x
+export speed
+var grav
+
+func _get input():
+
+func _physics_process(time: float)
+	
+	#get input
+	get_input()
+
+	#get velocity using dir and speed
+	vel_x = dir *speed
+	move_and_slide()
+
+	#gravity/floor
+	if not is
+
+//multiple missing : 'then'
