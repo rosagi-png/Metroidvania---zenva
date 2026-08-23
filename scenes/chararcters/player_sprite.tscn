@@ -8,6 +8,9 @@ height = 34.0
 
 [node name="Player" type="CharacterBody2D" unique_id=1468672255]
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1095329659]
+shape = SubResource("CapsuleShape2D_g4v7s")
+
 [node name="TorsoSprite" type="Sprite2D" parent="." unique_id=948045566]
 texture_filter = 1
 position = Vector2(0, -9)
@@ -22,6 +25,3 @@ texture = ExtResource("1_63c33")
 hframes = 8
 vframes = 5
 frame = 24
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1095329659]
-shape = SubResource("CapsuleShape2D_g4v7s")

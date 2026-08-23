@@ -8,14 +8,14 @@ height = 34.0
 
 [node name="Player" type="CharacterBody2D" unique_id=1468672255]
 
-[node name="Torso" type="Sprite2D" parent="." unique_id=560235014]
+[node name="TorsoSprite" type="Sprite2D" parent="." unique_id=560235014]
 texture_filter = 1
 position = Vector2(0, -9)
 texture = ExtResource("1_4sqeo")
 hframes = 8
 vframes = 5
 
-[node name="Legs" type="Sprite2D" parent="." unique_id=1569029750]
+[node name="LegSprite" type="Sprite2D" parent="." unique_id=1569029750]
 texture_filter = 1
 position = Vector2(0, -6)
 texture = ExtResource("1_4sqeo")
