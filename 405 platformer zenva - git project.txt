@@ -155,8 +155,12 @@ project settigns> input map, physics layers and default rendering 'nearest' upda
 
 separate functions -
 
-#process physics
+#process physics (and all subsequent operations)
 func _physics_process():
+get_input()
+move(delta)
+animation()
+move_and_slide()
 
 #process input
 func get_input():
@@ -166,3 +170,25 @@ func move(delta):
 
 #process anim (output frames)
 func animation():
+
+
+//
+
+E 0:00:04:399   player.gd:35 @ animation(): Node not found: "Sprites/LegSprite" (relative to "/root/Level/Entities/Player").
+  <C++ Error>   Method/function failed. Returning: nullptr
+  <C++ Source>  scene/main/node.cpp:1975 @ get_node()
+  <Stack Trace> player.gd:35 @ animation()
+                player.gd:12 @ _physics_process()
+
+E 0:00:04:399   animation: Invalid assignment of property or key 'flip_h' with value of type 'bool' on a base object of type 'null instance'.
+  <GDScript Source>player.gd:35 @ animation()
+  <Stack Trace> player.gd:35 @ animation()
+                player.gd:12 @ _physics_process()
+
+
+*@player_sprite (with original sprite names deleted)
+	correct names added to @Player
+
+//distracted w. work 'adams family issues'
+
+5:20 STOP 1hr 10mins
