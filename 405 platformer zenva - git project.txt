@@ -178,12 +178,12 @@ E 0:00:04:399   player.gd:35 @ animation(): Node not found: "Sprites/LegSprite" 
   <C++ Error>   Method/function failed. Returning: nullptr
   <C++ Source>  scene/main/node.cpp:1975 @ get_node()
   <Stack Trace> player.gd:35 @ animation()
-                player.gd:12 @ _physics_process()
+				player.gd:12 @ _physics_process()
 
 E 0:00:04:399   animation: Invalid assignment of property or key 'flip_h' with value of type 'bool' on a base object of type 'null instance'.
   <GDScript Source>player.gd:35 @ animation()
   <Stack Trace> player.gd:35 @ animation()
-                player.gd:12 @ _physics_process()
+				player.gd:12 @ _physics_process()
 
 
 *@player_sprite (with original sprite names deleted)
@@ -192,3 +192,14 @@ E 0:00:04:399   animation: Invalid assignment of property or key 'flip_h' with v
 //distracted w. work 'adams family issues'
 
 5:20 STOP 1hr 10mins
+
+20:28 correction re: basic setup - /Player node layout
+									Sprite nodes need to be child of a ((Node2D))
+									
+									eg Player (CharacterBody2D)
+										Sprites (Node2D)
+											TorsoSprite (Sprite2D)
+											LegSprite (Sprite2D)
+											
+									**		ergo  ''$Sprites/LegSprite '' (under Player node)
+											20:30 - * working
