@@ -16,8 +16,6 @@ func _physics_process(delta: float) -> void:
 func get_input(): 
 	pass
 	
-	
-	
 
 func move(delta):
 	velocity.x = direction_x * speed

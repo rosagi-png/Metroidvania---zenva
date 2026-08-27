@@ -197,9 +197,36 @@ E 0:00:04:399   animation: Invalid assignment of property or key 'flip_h' with v
 									Sprite nodes need to be child of a ((Node2D))
 									
 									eg Player (CharacterBody2D)
-										Sprites (Node2D)
-											TorsoSprite (Sprite2D)
+										Sprites (Node2D)						TorsoSprite (Sprite2D)
 											LegSprite (Sprite2D)
 											
 									**		ergo  ''$Sprites/LegSprite '' (under Player node)
 											20:30 - * working
+
+
+5:28 pm state 
+
+PLayer animation
+
+re 
+
+
+get_input() #input
+move(delta) #player velocity (dir * speed), jump, fall conditions
+
+animation()  #frames
+move_and_slide() char2d friction defaults
+
+create animation states ($AnimationPlayer) on player scene
+
+run, jump, idle - frame property ($LegSprite)
+
+Animation player [+] add track
+frame: (animation lenght: top right dialog)
+increment: set interval [bottom right dialog]
+
+Add frames  under $sprite >inspector [Frame +]
+
+*apply snapping to timeline cursor , select keys, nearest FPS
+
+5:38 (1hr 10min)

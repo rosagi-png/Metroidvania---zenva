@@ -6,13 +6,49 @@
 radius = 6.0
 height = 34.0
 
+[sub_resource type="Animation" id="Animation_4sqeo"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LegSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [26]
+}
+
+[sub_resource type="Animation" id="Animation_jpfxw"]
+resource_name = "run"
+length = 1.5999999999999999
+loop_mode = 1
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LegSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.001, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [26, 26, 27, 28, 29, 30, 31, 32, 33]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ycaei"]
+_data = {
+&"RESET": SubResource("Animation_4sqeo"),
+&"run": SubResource("Animation_jpfxw")
+}
+
 [node name="Player" type="CharacterBody2D" unique_id=1468672255]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2089424058]
 shape = SubResource("CapsuleShape2D_g4v7s")
-
-[node name="Camera2D" type="Camera2D" parent="." unique_id=339946002]
-zoom = Vector2(4, 4)
 
 [node name="Sprites" type="Node2D" parent="." unique_id=474161239]
 
@@ -29,4 +65,11 @@ position = Vector2(0, -6)
 texture = ExtResource("1_4sqeo")
 hframes = 8
 vframes = 5
-frame = 24
+frame = 26
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=339946002]
+zoom = Vector2(4, 4)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1096229124]
+root_node = NodePath("../Sprites")
+libraries/ = SubResource("AnimationLibrary_ycaei")
