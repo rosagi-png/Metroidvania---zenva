@@ -22,7 +22,7 @@ func get_input():
 func move(delta):	
 	if direction_x:
 		velocity.x = move_toward(velocity.x, direction_x * speed, acceleration * delta)
-		$AnimationPlayer.play("run", -1, velocity.x/32)
+		$AnimationPlayer.play("run", -1, velocity.x/32 * direction_x)
 		print("Velocity x:  ", (velocity.x ))
 		
 	else: 
@@ -37,8 +37,9 @@ func move(delta):
 func animation():
 #legs
 #if not facing left, direction_x = smaller than zero
-	if direction_x != 0:
+	if direction_x != 1:
 		$Sprites/LegSprite.flip_h = direction_x < 0
+	print ("legsprite dir:" ,$Sprites/LegSprite.flip_h)
 	
 	if is_on_floor():
 		$AnimationPlayer.current_animation = 'run' if direction_x else 'idle'
