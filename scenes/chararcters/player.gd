@@ -2,6 +2,8 @@ extends CharacterBody2D
 
 var direction_x: float
 @export var speed := 160
+@export var acceleration := 600
+@export var friction := 1000
 var gravity = 600
 
 
@@ -17,8 +19,11 @@ func get_input():
 	pass
 	
 
-func move(delta):
-	velocity.x = direction_x * speed
+func move(delta):	
+	if direction_x:
+		velocity.x = move_toward(velocity.x, direction_x * speed, acceleration * delta)
+	else: 
+		velocity.x = move_toward(velocity.x, 0, friction * delta)
 	if not is_on_floor():
 		velocity.y += gravity * delta
 	

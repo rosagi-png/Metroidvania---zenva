@@ -264,3 +264,13 @@ DIRECTION = {
 fix sprite offsets, collison polish
 
 5:08 STOP (50mins)
+
+3:55pm 29/8 STATE - refine movement
+
+ease in velocity
+***move_toward (easing/interpolation function!)
+ove_toward(start_value,goal_value,time_interval)
+
+move_toward(velocity.x, velocity_x *speed)
+#rate of movement, #movement * rate, #move * rate * multiplier *realtime
+move_towards(velocity.x, velocity_x *speed, acceleration * delta)
