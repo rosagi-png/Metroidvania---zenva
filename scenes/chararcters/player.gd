@@ -22,6 +22,9 @@ func get_input():
 func move(delta):	
 	if direction_x:
 		velocity.x = move_toward(velocity.x, direction_x * speed, acceleration * delta)
+		$AnimationPlayer.play("run", -1, velocity.x/32)
+		print("Velocity x:  ", (velocity.x ))
+		
 	else: 
 		velocity.x = move_toward(velocity.x, 0, friction * delta)
 	if not is_on_floor():
@@ -43,7 +46,7 @@ func animation():
 		$AnimationPlayer.current_animation = 'jump'
 
 
-	print("Mouse_pos: ", get_local_mouse_position() )
+	#print("Mouse_pos: ", get_local_mouse_position() )
 
 #torso
 #normalize raw vector (mouse position)

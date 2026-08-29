@@ -274,3 +274,10 @@ ove_toward(start_value,goal_value,time_interval)
 move_toward(velocity.x, velocity_x *speed)
 #rate of movement, #movement * rate, #move * rate * multiplier *realtime
 move_towards(velocity.x, velocity_x *speed, acceleration * delta)
+4:30 sTOP (35mins)
+
+experiment: link animation rate change with current speed
+*velocity x (=160)
+*$AnimationPlayer.play("run", -1, velocity.x/32)
+implemented, working!
+5:00pm
