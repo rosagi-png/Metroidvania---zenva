@@ -287,10 +287,12 @@ implemented, working!
 4:20 pm 30/08 STATE
 
 projectile math for jump 
-see: premade.txt youube ;making a usable jump in godot
+see: premade.txt youtube ;making a usable jump in godot
 
 custom jump/gravity - replace jump value with jump velocity
 
 jump velocity (jump height '100'/jump_time_to_peak '0.5')
 
 jump gravity (* -2.0' / (jump_time_to_peak * jump_time_to_peak')
+
+5:50 (30mins)  //tired early sleep broke ~9am, woke 215pm PUSH
