@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://c03ta6bmxi84h"]
 
 [ext_resource type="Texture2D" uid="uid://de5wf7al0hknv" path="res://graphics/characters/player.png" id="1_4sqeo"]
+[ext_resource type="Script" uid="uid://bo20rfcayu217" path="res://scenes/chararcters/player.gd" id="1_jpfxw"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g4v7s"]
 radius = 6.0
@@ -81,6 +82,7 @@ _data = {
 }
 
 [node name="Player" type="CharacterBody2D" unique_id=1468672255]
+script = ExtResource("1_jpfxw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2089424058]
 shape = SubResource("CapsuleShape2D_g4v7s")
@@ -108,3 +110,8 @@ zoom = Vector2(4, 4)
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1096229124]
 root_node = NodePath("../Sprites")
 libraries/ = SubResource("AnimationLibrary_ycaei")
+
+[node name="Timer" type="Node" parent="." unique_id=1375829683]
+
+[node name="ReloadTimer" type="Timer" parent="Timer" unique_id=40587260]
+one_shot = true

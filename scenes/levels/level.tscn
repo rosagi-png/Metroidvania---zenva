@@ -1,7 +1,15 @@
 [gd_scene format=3 uid="uid://ctbwewrrmew3"]
 
+[ext_resource type="Script" uid="uid://ch3i6tans0uy0" path="res://scenes/levels/level.gd" id="1_bovvr"]
+[ext_resource type="PackedScene" uid="uid://c03ta6bmxi84h" path="res://scenes/chararcters/player.tscn" id="2_b2cq8"]
+
 [node name="Level" type="Node2D" unique_id=286159753]
+script = ExtResource("1_bovvr")
 
 [node name="Layers" type="Node2D" parent="." unique_id=1637556606]
 
 [node name="Entities" type="Node2D" parent="." unique_id=22582381]
+
+[node name="Player" parent="Entities" unique_id=1468672255 instance=ExtResource("2_b2cq8")]
+
+[connection signal="shoot" from="Entities/Player" to="." method="_on_player_shoot"]

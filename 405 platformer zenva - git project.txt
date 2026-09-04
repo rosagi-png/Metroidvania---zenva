@@ -296,3 +296,48 @@ jump velocity (jump height '100'/jump_time_to_peak '0.5')
 jump gravity (* -2.0' / (jump_time_to_peak * jump_time_to_peak')
 
 5:50 (30mins)  //tired early sleep broke ~9am, woke 215pm PUSH
+
+
+4:10 STATE 04/09
+recap custom jump ()(height over time))
+jump height, jump time to peak, jump time to descent
+
+var jump velocity
+	jump gravity
+	fall gravity
+	
+	player movement quiz
+	
+	velocity.x = move_toward(velocity.x, direction_x * speed, acceleration *delta)
+	
+	velocity.x = move_toward(start, goal, factor/rate)
+							(current, target, step)
+
+	mouse input - to 8 directional
+		normalize direction vector ie (0.5,1.2) then round it's components (0,1)
+		
+		4:30 sTOP (20mins)
+		
+		4:40 START
+		
+		BULLET
+		
+1)	Bullet -	basic physics_process
+		var direction: Vector2
+		var speed: int = 200
+		
+		position += direction * speed * delta
+
+2) Player - cooldown function (Add node 'Timer'> Timer node 'Reload')
+
+#if mouse button 'shoot' is pressed and $Time/ReloadTimer = false (no time left)
+	#'if Input.pressed("shoot") and timer =0'
+		shoot.emit(position, get_local_mouse_position().normalized())
+	#start Reload timer		
+#create signal from player to 'emit'/spawn bullet in levle
+
+
+3) instantiate bullet scene in level (prefab)
+
+Level scene: under player node, connect 'shoot'
+signal to level

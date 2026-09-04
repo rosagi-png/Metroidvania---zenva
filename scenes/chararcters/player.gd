@@ -1,12 +1,14 @@
 extends CharacterBody2D
 
 var direction_x: float
+@export_category('move')
 @export var speed := 160
 @export var acceleration := 600
 @export var friction := 1000
 var gravity = 600
 
 #custom jump/gravity
+@export_category('jump')
 @export var jump_height: float = 100
 @export var jump_time_to_peak: float = 0.5
 @export var jump_time_to_descent: float = 0.4
@@ -16,7 +18,7 @@ var gravity = 600
 @onready var fall_gravity: float = ((-2.0 * jump_height) / (jump_time_to_peak * jump_time_to_descent)) * -1.0
 
 
-
+signal shoot(pos: Vector2, dir: Vector2)
 
 func _physics_process(delta: float) -> void:
 	get_input()
@@ -43,7 +45,12 @@ func move(delta):
 	direction_x = Input.get_axis("left", "right")
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = jump_velocity
+		#bullet
 		
+	if Input.is_action_just_pressed("shoot") and not $Timer/ReloadTimer.time_left:
+		shoot.emit(position, get_local_mouse_position().normalized())
+		print('shoot')
+		$Timer/ReloadTimer.start()	
 func get_custom_gravity() -> float:
 	return jump_gravity if velocity.y < 0.0 else fall_gravity
 
@@ -52,7 +59,7 @@ func animation():
 #if not facing left, direction_x = smaller than zero
 	if direction_x != 1:
 		$Sprites/LegSprite.flip_h = direction_x < 0
-	print ("legsprite dir:" ,$Sprites/LegSprite.flip_h)
+	#print ("legsprite dir:" ,$Sprites/LegSprite.flip_h)
 	
 	if is_on_floor():
 		$AnimationPlayer.current_animation = 'run' if direction_x else 'idle'
