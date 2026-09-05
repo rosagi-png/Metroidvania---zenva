@@ -371,3 +371,54 @@ Under Level: preload bullet scene
 	
 	> reiterate, code under level scene(preload, instantiate bullet scene)
 	> reiterate bullet, physics run code, (func setup - under bullet pos, dir > setup under level)
+
+______________________
+
+I briefly went back over bullet code today, in attempts to pseudo recap the thing 
+
+Under player script;
+
+1) ‘if input (mouse button) AND Timer.Reload=0
+
+then emit.’shoot’ (signal (pos,dir))
+
+restart Timer. Reload
+
+Under Level;
+
+2)  preload (bullet_scene)
+
+func _on_signal_shoot(pos, dir)
+  bullet_scene.instantiate()
+  bullet.setup(pos, dir)
+
+Under Bullet;
+
+3) func _physics_process(delta) :
+
+	  (update) position += direction * speed * delta
+
+	 func setup(pos, dir)
+
+		 position = pos
+		 direction = dir
+
+
+=3 
+thats my ‘pseudo’ summary 
+1) Player - on click and timer 0: 
+emit signal ‘shoot’
+
+2) Level - preload, then if signal 
+‘shoot’ : instantiate bullet scene
+
+3) Bullet - init direction, speed
+on frame/rate: update position 
+
+store position, direction (pos, dir) 
+rosagi — 7:28 PM
+1) Player - input: signal 
+
+2) Level - listen : output
+
+3) Bullet - update coords

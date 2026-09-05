@@ -66,7 +66,6 @@ func animation():
 	else: 
 		$AnimationPlayer.current_animation = 'jump'
 
-
 	#print("Mouse_pos: ", get_local_mouse_position() )
 
 #torso
