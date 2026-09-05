@@ -12,4 +12,6 @@ script = ExtResource("1_bovvr")
 
 [node name="Player" parent="Entities" unique_id=1468672255 instance=ExtResource("2_b2cq8")]
 
+[node name="Bullets" type="Node2D" parent="Entities" unique_id=1765562833]
+
 [connection signal="shoot" from="Entities/Player" to="." method="_on_player_shoot"]

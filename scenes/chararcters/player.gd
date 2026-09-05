@@ -45,8 +45,8 @@ func move(delta):
 	direction_x = Input.get_axis("left", "right")
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = jump_velocity
-		#bullet
 		
+	#bullet
 	if Input.is_action_just_pressed("shoot") and not $Timer/ReloadTimer.time_left:
 		shoot.emit(position, get_local_mouse_position().normalized())
 		print('shoot')

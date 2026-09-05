@@ -341,3 +341,33 @@ var jump velocity
 
 Level scene: under player node, connect 'shoot'
 signal to level
+
+
+4:32 START Bullet recap - 430 start/setup)
+
+pseudo
+
+1) on input 'shoot' -on_mouse_button' get pos,Vector2
+($Player: /is_action_just_pressed AND NOT $Timer/Reload.time_left)
+.. emit 'shoot' (pos, dir) - [emit.position, mouse_pos().normalized()]
+
+ - on mouse button and timer 0, 'shoot' emit (player pos, mouse_direction)
+
+
+2) set $timer (cooldown) rundown, if timer =0 then
+/set new Timer/ReloadTimer.start()
+
+- restart timer
+
+3) instantiate bullet scene in level scene
+
+4:55 STOP (break)
+__________________
+
+
+Under Level: preload bullet scene
+
+	var bullet_scene = preload("res://scenes/bullets.tscn")
+	
+	> reiterate, code under level scene(preload, instantiate bullet scene)
+	> reiterate bullet, physics run code, (func setup - under bullet pos, dir > setup under level)
