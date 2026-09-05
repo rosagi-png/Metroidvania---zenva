@@ -50,6 +50,7 @@ func move(delta):
 	if Input.is_action_just_pressed("shoot") and not $Timer/ReloadTimer.time_left:
 		shoot.emit(position, get_local_mouse_position().normalized())
 		print('shoot')
+		#print('$Timer.ReloadTimer.time_left:')
 		$Timer/ReloadTimer.start()	
 func get_custom_gravity() -> float:
 	return jump_gravity if velocity.y < 0.0 else fall_gravity

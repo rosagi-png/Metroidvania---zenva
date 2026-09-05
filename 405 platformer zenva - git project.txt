@@ -364,13 +364,14 @@ pseudo
 4:55 STOP (break)
 __________________
 
-
+5:05
 Under Level: preload bullet scene
 
 	var bullet_scene = preload("res://scenes/bullets.tscn")
 	
 	> reiterate, code under level scene(preload, instantiate bullet scene)
 	> reiterate bullet, physics run code, (func setup - under bullet pos, dir > setup under level)
+<<<<<<< Updated upstream
 
 ______________________
 
@@ -422,3 +423,6 @@ rosagi — 7:28 PM
 2) Level - listen : output
 
 3) Bullet - update coords
+=======
+5:20 (40mins)
+>>>>>>> Stashed changes

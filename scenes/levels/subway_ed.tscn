@@ -1,10 +1,10 @@
-[gd_scene format=4 uid="uid://bt2fgdon1oki1"]
+[gd_scene format=4 uid="uid://bf1eq10nm4tyg"]
 
-[ext_resource type="Texture2D" uid="uid://c7v0ifpdabs2i" path="res://graphics/tilesets/subway.png" id="1_1eclv"]
-[ext_resource type="PackedScene" uid="uid://c03ta6bmxi84h" path="res://scenes/chararcters/player.tscn" id="2_6c57m"]
+[ext_resource type="PackedScene" uid="uid://ctbwewrrmew3" path="res://scenes/levels/level.tscn" id="1_vi4m3"]
+[ext_resource type="Texture2D" uid="uid://c7v0ifpdabs2i" path="res://graphics/tilesets/subway.png" id="2_hbg1t"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1eclv"]
-texture = ExtResource("1_1eclv")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ukfer"]
+texture = ExtResource("2_hbg1t")
 1:0/0 = 0
 1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 2:0/0 = 0
@@ -464,20 +464,13 @@ texture = ExtResource("1_1eclv")
 23:24/0 = 0
 24:24/0 = 0
 
-[sub_resource type="TileSet" id="TileSet_g4v7s"]
+[sub_resource type="TileSet" id="TileSet_30qcr"]
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_1eclv")
+sources/0 = SubResource("TileSetAtlasSource_ukfer")
 
-[node name="Level" type="Node2D" unique_id=286159753]
+[node name="Level" unique_id=286159753 instance=ExtResource("1_vi4m3")]
 
-[node name="Layers" type="Node2D" parent="." unique_id=1637556606]
-
-[node name="TileMapLayer" type="TileMapLayer" parent="Layers" unique_id=1630008566]
+[node name="TileMapLayer" type="TileMapLayer" parent="Layers" parent_id_path=PackedInt32Array(1637556606) index="0" unique_id=324403502]
 texture_filter = 1
 tile_map_data = PackedByteArray("AAD//wEAAAAEAAAAAAAAAAEAAAAFAAAAAAABAAEAAAAGAAAAAAACAAEAAAAHAAAAAAADAAEAAAAIAAAAAAAEAAEAAAAJAAAAAAAFAAEAAAAKAAAAAAAJAAQAAAAEAAAAAAAKAAQAAAAFAAAAAAALAAQAAAAGAAAAAAAMAAQAAAAHAAAAAAANAAQAAAAIAAAAAAAOAAQAAAAJAAAAAAAPAAQAAAAKAAAAAAD5/wMAAAAAAAEAAAD5/wQAAAAAAAIAAAD5/wUAAAAAAAMAAAD6/wIAAAABAAAAAAD6/wMAAAABAAEAAAD6/wQAAAABAAIAAAD6/wUAAAABAAMAAAD6/wYAAAABAAQAAAD7/wIAAAACAAAAAAD7/wMAAAACAAEAAAD7/wQAAAACAAIAAAD7/wUAAAACAAMAAAD7/wYAAAACAAQAAAD8/wIAAAADAAAAAAD8/wMAAAADAAEAAAD8/wQAAAADAAIAAAD8/wUAAAADAAMAAAD8/wYAAAADAAQAAAD9/wMAAAAEAAEAAAD9/wQAAAAEAAIAAAD9/wUAAAAEAAMAAAAGAAEAAAAEAAAAAAAHAAEAAAAFAAAAAAAIAAEAAAAGAAAAAAAJAAEAAAAHAAAAAAAKAAEAAAAIAAAAAAALAAEAAAAJAAAAAAAMAAEAAAAKAAAAAAANAAEAAAAEAAAAAAAOAAEAAAAFAAAAAAAPAAEAAAAGAAAAAAAQAAEAAAAHAAAAAAARAAEAAAAIAAAAAAASAAEAAAAJAAAAAAATAAEAAAAKAAAAAAA=")
-tile_set = SubResource("TileSet_g4v7s")
-
-[node name="Entities" type="Node2D" parent="." unique_id=22582381]
-
-[node name="Player" parent="Entities" unique_id=1468672255 instance=ExtResource("2_6c57m")]
-position = Vector2(26, -12)
+tile_set = SubResource("TileSet_30qcr")
