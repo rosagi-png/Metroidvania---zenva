@@ -426,3 +426,10 @@ rosagi — 7:28 PM
 =======
 5:20 (40mins)
 >>>>>>> Stashed changes
+later 00.50
+//remade subway as subway_ed (new inherited scene) - level.gd
+//$Bullets not found relative to parent scene
+
+*$Entities/Bullets.add_child(bullet)
+
+01:00 STOP (10mins)
