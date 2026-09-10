@@ -511,3 +511,4 @@ Drone script:
 	regardless of distance)
 
 //Collision layers (drone(Char2D), player detection(Area2D))
+6:30 STOP (1 hr 45min)
