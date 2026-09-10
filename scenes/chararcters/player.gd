@@ -47,6 +47,8 @@ func move(delta):
 		velocity.y = jump_velocity
 		
 	#bullet
+	
+	
 	if Input.is_action_just_pressed("shoot") and not $Timer/ReloadTimer.time_left:
 		shoot.emit(position, get_local_mouse_position().normalized())
 		print('shoot')

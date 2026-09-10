@@ -423,8 +423,11 @@ rosagi — 7:28 PM
 2) Level - listen : output
 
 3) Bullet - update coords
-=======
+
+
+========================
 5:20 (40mins)
+
 >>>>>>> Stashed changes
 later 00.50
 //remade subway as subway_ed (new inherited scene) - level.gd
@@ -433,3 +436,78 @@ later 00.50
 *$Entities/Bullets.add_child(bullet)
 
 01:00 STOP (10mins)
+
+
+
+_______________________________
+
+10/09 4:45pm state
+
+recap bullets 
+
+player scene > input > signal
+level > listen > instantiate
+bullet scene > update position, direction (V2)
+
+
+Bullet node setup
+
+Area2D
+
+	> Sprite2D  - texture.png 
+	> CollisionShape2D  - rectangleshape2D
+	
+	Inspector> collision> set layer 4 (*terrain, player, enemies /bullets)
+	
+	func _physics_process(delta: float) -> void:
+		
+		position += direction * speed * delta
+
+cooldown Timer
+
+	if Input.is_action_just_pressed("shoot") and not $timer.ReloadTimer:time_left: 
+		$Timer/ReloadTimer.start()
+		
+		
+		
+5:00 Drone Setup - physics based
+
+CharacterBody2D - 'Drone' save as Drone.tscn
+	AnimatedSprite2D - enable autoplay on load, animation: loop
+	CollisionShape2D - CircleShape2D
+	
+add player detection (Area2D)
+
+	Area2D 'PlayerDetectionArea'	
+	CollisonShape2D -CircleShape2d
+
+Collision Layers
+		
+Drone(charbody): Layer 3 (enemies) - mask terrain, player, bullets
+PlayerDetection(Area2D) Layer 2 (player)
+Player(charbody): Layer 2 - terrain, enemies, bullets
+
+Under main level; Entities, instance drone .tscn
+
+5:17
+
+Drone node setup - SpriteFrame resource
+//no shoot *connect Player signal 'shoot' - Subway receiver _on_player_shoot '>]'
+
+/bullets fire over player (mask open)
+
+
+5:46
+Drone script: 
+	
+	if player exists: 'move toward player'
+	#subtract drone position from player position
+	- gives vector that points from drone towards player
+	
+	var dir = (player.position - position).normalized()
+	
+	(normalizing keeps it's length at 1; 
+	multiplying by speed produces constant velocity
+	regardless of distance)
+
+//Collision layers (drone(Char2D), player detection(Area2D))
