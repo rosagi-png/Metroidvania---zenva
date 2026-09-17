@@ -21,3 +21,10 @@ func _physics_process(_delta: float) -> void:
 		velocity = dir * speed
 		move_and_slide()
 		
+func hit():
+	print('drone was hit')
+	health -= 1
+	var tween = create_tween()
+	tween.tween_property($AnimatedSprite2D.material, 'shader_parameter/Progress', 1.0, 0.1)
+	tween.tween_property($AnimatedSprite2D.material, 'shader_parameter/Progress', 0.0, 0.3)
+		

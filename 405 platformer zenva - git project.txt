@@ -500,7 +500,7 @@ Drone node setup - SpriteFrame resource
 5:46
 Drone script: 
 	
-	if player exists: 'move toward player'
+	if body entered = player: 'move toward player'
 	#subtract drone position from player position
 	- gives vector that points from drone towards player
 	
@@ -512,3 +512,43 @@ Drone script:
 
 //Collision layers (drone(Char2D), player detection(Area2D))
 6:30 STOP (1 hr 45min)
+
+
+4:45pm - 17/09 state 
+
+recap drone
+
+// dron eouter rpoxmity not detected
+
+Player: collision layer // set to Terrain, 
+mask (visibility) set to Terrain, Enemy, Bullets
+
+Drone: collision layer set to Enemy, 
+mask set to Terrain, Player, Bullets
+
+
+5:10 
+
+bullet - drone setup 
+__________________________
+Bullet.gd; 
+
+] func _on_body_entered(body:Node2d) -> void:
+	#print (body) **
+	if 'hit' in body: #if variable is in body
+		body.hit()
+
+Drone.gd; 
+
+func hit()
+	#print('drone was hit')
+
+
+____
+
+new shader  [Fragment} local to scene []
+Colour parameter + Input (FloatParameter - range)
+*make sure to invert inputs ('progress' (hit) = 1.0)
+
+
+6:00 STOP (50mins) .. snip/screens upload etc

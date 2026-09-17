@@ -2,6 +2,19 @@
 
 [ext_resource type="Script" uid="uid://bgwqhd8eusqhl" path="res://scenes/chararcters/drone.gd" id="1_oryw2"]
 [ext_resource type="Texture2D" uid="uid://vyr0ks75oxum" path="res://graphics/characters/drone.png" id="1_u845c"]
+[ext_resource type="Shader" uid="uid://cr0ggi8wm2ubr" path="res://shader/flash.tres" id="2_da5vu"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_k75p2"]
+resource_local_to_scene = true
+shader = ExtResource("2_da5vu")
+shader_parameter/ColorParameter = Color(1, 1, 1, 1)
+shader_parameter/Progress = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vydbt"]
+resource_local_to_scene = true
+shader = ExtResource("2_da5vu")
+shader_parameter/ColorParameter = Color(1, 1, 1, 1)
+shader_parameter/Progress = 0.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_oryw2"]
 atlas = ExtResource("1_u845c")
@@ -43,14 +56,16 @@ animations = [{
 radius = 8.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_yf5fn"]
-radius = 42.047592
+radius = 62.0
 
 [node name="Drone" type="CharacterBody2D" unique_id=808870473]
+material = SubResource("ShaderMaterial_k75p2")
 collision_layer = 4
 collision_mask = 11
 script = ExtResource("1_oryw2")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1611398136]
+material = SubResource("ShaderMaterial_vydbt")
 sprite_frames = SubResource("SpriteFrames_g4v7s")
 frame = 3
 frame_progress = 0.9460042
