@@ -552,3 +552,85 @@ Colour parameter + Input (FloatParameter - range)
 
 
 6:00 STOP (50mins) .. snip/screens upload etc
+
+4:15 20/09 STATE library
+
+explosions 
+
+Under Drone.gd (variable function)
+
+var health := 3:
+	set(value):
+		health = value
+		if health <= 0:
+			queue_free()
+			'explode'
+
+______________________________
+			
+NEw node	'Explosion' - scenes/bullets/
+
+
+Area2D 'explosion;
+	Sprite2D
+	CollisionShape2D
+	AnimationPlayer
+	
+	
+Sprite2d: add png under Texture:
+	
+	Animation Player: [Animation > new] [+] (propoerty track)
+Frames [+]
+
+add *Call Method Track (queue_free) 
+__________________________________
+back under variables:
+
+add signal to (setup vector position)
+
+signal explode(pos: Vector2)
+
+
+
+iterate through drones and connect explode signal 
+to the level
+
+recap: 
+1)
+	Under Drone 
+	
+	a) add conditions under health
+	
+		#var health := 3:
+	set(value):
+		health = value
+		... queue_free()
+		
+	b)*** declare variable (signal)
+	
+	signal explode(pos: Vector2)
+	
+	c) add collision shape (Player only)
+	** connect body_entered to new function
+	
+	
+2) Create explosion scene (Area2d)
+
+a) Area2D
+	Sprite2D
+	CollisionShape2D
+	AnimationPlayer
+	
+b) add sprite frames 
+	[Anim, New, +property frames, + method track]
+
+c) add script Setup
+
+func setup (pos: Vector2):
+	position = pos
+	
+3) 
+
+eg signal 
+
+Source: Area2d node, Signal: body_enter Target: Drone
