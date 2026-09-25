@@ -634,3 +634,52 @@ func setup (pos: Vector2):
 eg signal 
 
 Source: Area2d node, Signal: body_enter Target: Drone
+//////
+25/09 4:30 pm 
+explosions recap
+
+conditions (drone health)
+
+var health := 3:
+	set(value):
+	health = value
+	if health =< 0:
+		~explode.emit(position)
+		queue_free()
+
+signal.explode(pos: Vector2)
+
+signal: emitter - Drone, event: explode receiver: level
+~
+
+
+Source: Area2d node, Signal: body_enter Target: Drone
+
+
+Source: [node origin], Signal: [event trigger] Target: [script action]
+
+Source: 'object', Signal 'condition' Target: 'outcome'
+
+_______________________________________
+
+more actual examples: - Connections to method
+
+Source: Player Detection Area, Signal: body_entered Target: Drone
+
+Source: Player Detection Area, Signal: body_exited Target: Drone
+
+Source: CollisionShape2D2, Signal: body_entered Target: Drone
+
+
+explosion.gd
+
+func _setup(pos: Vector2)
+////
+
+4:50 
+
+level.gd - fixed syntax,  tab indentation errors (erased, spaces, replace with tab)
+
+bullets - placed in /bullets, fixed preload res:/bullets
+ tested: working - on explode - drone disappears
+5:00pm (30min)
