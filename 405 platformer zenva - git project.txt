@@ -700,11 +700,13 @@ Once the connection is verified,
 var explosion = explosion_scene.instantiate()
 
 #call its setup function with the received position, 
-explosion.set(pos)
+explosion.setup(pos)
 
 'add explosion'
 #and add it under the existing Bullets node so it lives in the same place as the other projectiles.'
-$Entities.Bullets.add_child(bullet)
+$Entities/Bullets.add_child(bullet)
 
 
 //Cannot call method 'add_child' on a null value.
+//animation stopos on frame (*no autoplay)
+/animation needs rescaling - use frame interval box to replace, queue_free at end
