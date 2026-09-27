@@ -710,3 +710,6 @@ $Entities/Bullets.add_child(bullet)
 //Cannot call method 'add_child' on a null value.
 //animation stopos on frame (*no autoplay)
 /animation needs rescaling - use frame interval box to replace, queue_free at end
+
+
+5:13 STOP (53mins)
