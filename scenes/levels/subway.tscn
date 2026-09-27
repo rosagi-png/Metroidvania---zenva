@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://ch3i6tans0uy0" path="res://scenes/levels/level.gd" id="1_uu0wy"]
 [ext_resource type="PackedScene" uid="uid://c03ta6bmxi84h" path="res://scenes/chararcters/player.tscn" id="2_6c57m"]
 [ext_resource type="PackedScene" uid="uid://c6mufm1cu3mtq" path="res://scenes/chararcters/drone.tscn" id="3_kq76o"]
+[ext_resource type="Shader" uid="uid://cr0ggi8wm2ubr" path="res://shader/flash.tres" id="5_k75p2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1eclv"]
 texture = ExtResource("1_1eclv")
@@ -471,6 +472,12 @@ physics_layer_0/collision_layer = 1
 physics_layer_0/collision_mask = 0
 sources/0 = SubResource("TileSetAtlasSource_1eclv")
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wvdar"]
+resource_local_to_scene = true
+shader = ExtResource("5_k75p2")
+shader_parameter/ColorParameter = Color(1, 1, 1, 1)
+shader_parameter/Progress = 0.0
+
 [node name="Subway" type="Node2D" unique_id=286159753]
 script = ExtResource("1_uu0wy")
 
@@ -487,6 +494,7 @@ tile_set = SubResource("TileSet_g4v7s")
 position = Vector2(26, -12)
 
 [node name="Drone" parent="Entities" unique_id=808870473 instance=ExtResource("3_kq76o")]
+material = SubResource("ShaderMaterial_wvdar")
 position = Vector2(73, -76)
 
 [node name="Bullets" type="Node2D" parent="Entities" unique_id=196411308]

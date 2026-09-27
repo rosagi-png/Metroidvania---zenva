@@ -683,3 +683,28 @@ level.gd - fixed syntax,  tab indentation errors (erased, spaces, replace with t
 bullets - placed in /bullets, fixed preload res:/bullets
  tested: working - on explode - drone disappears
 5:00pm (30min)
+
+
+4:20 STATE
+
+explosion - complete
+
+initial event - coordinates
+drone - bullet death triggers explode (pos: vector)
+
+spawning explosion
+'Spawning the explosion scene
+Once the connection is verified, 
+
+#expand create_explosion to instance the explosion scene, 
+var explosion = explosion_scene.instantiate()
+
+#call its setup function with the received position, 
+explosion.set(pos)
+
+'add explosion'
+#and add it under the existing Bullets node so it lives in the same place as the other projectiles.'
+$Entities.Bullets.add_child(bullet)
+
+
+//Cannot call method 'add_child' on a null value.

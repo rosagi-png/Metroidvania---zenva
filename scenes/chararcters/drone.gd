@@ -39,4 +39,5 @@ func hit():
 func _on_collision_shape_2d_2_body_entered(body: Node2D) -> void:
 	pass # Replace with function body.
 	explode.emit(position)
+	queue_free()
 	'explode'
