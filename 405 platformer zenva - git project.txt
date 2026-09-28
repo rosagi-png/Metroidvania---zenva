@@ -713,3 +713,48 @@ $Entities/Bullets.add_child(bullet)
 
 
 5:13 STOP (53mins)
+
+
+28/09
+3:53pm (>53mins sketching)
+
+summary explosion - bullet triggers .hit()
+in [body] entered (if 'hit' in body:)
+
+Bullet
+	Bullet _on_body_entered(body: Node2D) -> void:
+		body.hit()
+Drone		
+	
+	var health := 3:
+		set(value):
+			health = value
+			if health <= 0:
+			explode.emit(position)
+			queue_free()
+
+	***signal explode(pos: Vector2)
+	
+	func hit():
+		print('drone was hit')
+		health -= 1
+		var tween = create_tween()
+		
+		general workflow/practice 
+		
+		on creation
+		emit signal (ie position, direction)
+		then instance (ie bullet)
+		
+		on destruction/transformation
+		
+		emit signal
+		then delete (ie queue_free())
+		
+		
+		when colliding with a variety of objects
+		
+		include 'hit' method in body 
+		to check for exceptions
+		
+		4:30 STOP (50mins)
