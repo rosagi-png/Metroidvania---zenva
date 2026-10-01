@@ -782,4 +782,4 @@ FG Detail Layer  - set Z index to [1] (overrides node order)
 5:40pm STOP
 
 
-6:00 STOP (1hr 5min)- placing tileset/ tilemap collision order mixed
+6:15 STOP (1hr 20min)- placing tileset/ tilemap collision order mixed
