@@ -758,3 +758,28 @@ Drone
 		to check for exceptions
 		
 		4:30 STOP (50mins)
+		
+4:45pm 1/10/26 state
+		
+		
+4:55 pm creating the level 
+		
+		tile map layer - node
+		 >Tilemap select rectangle and erase - remove tilemap
+		 >Tileset: paint: Physics Layer 0 (paint collision)
+		
+add walls.png to [TileSet: Tile Sources]
+
+			Paint: Physics Layer 0: [Grid snap]  - then click on
+								  : Transform (right.left.hor.vert)
+				
+Duplicate TileMapLayer and created 
+BG Layer
+BGDetail Layer
+
+FG Detail Layer  - set Z index to [1] (overrides node order)
+
+5:40pm STOP
+
+
+6:00 STOP (1hr 5min)- placing tileset/ tilemap collision order mixed
