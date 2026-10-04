@@ -11,6 +11,15 @@ func setup(pos: Vector2, dir: Vector2):
 		position = pos + dir * OFFSET
 		direction = dir
 		
+<<<<<<< HEAD
 #normalize raw vector (mouse position)
 var raw_dir = get_local_mouse_position().normalized()
 var adjusted_dir = Vector2i(round(raw_dir.x), round(raw_dir.y))
+=======
+		
+
+
+func _on_body_entered(body: Node2D) -> void:
+	if 'hit' in body:
+		body.hit()
+>>>>>>> origin/main
