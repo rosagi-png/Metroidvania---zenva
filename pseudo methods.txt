@@ -1,0 +1,17 @@
+4:20 trial mod: -bullets snap to 8 directional
+
+1st method ( round mouse input)
+
+pseudo - take mouse input (normalized)
+for x = -1 (+/- 15 degrees/units):
+	make - 1
+	
+	make lookup table - convert x/y slope to 
+	left        (-1.0, 0.0)
+	left up     (-0.7,-0.7)
+	up          ( 0.0,-1.0)
+	right up    ( 0.7,-0.7) 
+	right       ( 1.0, 0.0)
+	right down  ( 0.7, 0.7)
+	down        ( 0.0, 1.0)
+	left down   (-1.0, 0.5)
