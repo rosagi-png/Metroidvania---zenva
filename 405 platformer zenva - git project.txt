@@ -512,6 +512,19 @@ Drone script:
 
 //Collision layers (drone(Char2D), player detection(Area2D))
 6:30 STOP (1 hr 45min)
+<<<<<<< HEAD
+//drone; player detection, collison not working
+
+Player - changed collision layer to 2 (Player), and mask to 'all other'
+
+pseudo  - solve character frame = fire direction
+
+eg 8 directions normalized (x, y) 
+left  x: -1 y:  0 , upper left  x: -0.75 y:  -0.75
+up    x:  0 y: -1 , upper right x:  0.75 y:  -0.75 
+right x:  1 y: -0 , lower right x:  0.75 y:   0.75
+down  x: -0 y:  1 , lower left  x: -0.75 y:   0.75
+=======
 
 
 4:45pm - 17/09 state 
@@ -783,3 +796,5 @@ FG Detail Layer  - set Z index to [1] (overrides node order)
 
 
 6:15 STOP (1hr 20min)- placing tileset/ tilemap collision order mixed
+>>>>>>> origin/main
+ddddda
