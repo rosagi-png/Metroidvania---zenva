@@ -797,4 +797,14 @@ FG Detail Layer  - set Z index to [1] (overrides node order)
 
 6:15 STOP (1hr 20min)- placing tileset/ tilemap collision order mixed
 >>>>>>> origin/main
-ddddda
+
+
+11/20/26
+2:30 pm state library
+
+recap level design ui
+
+3:11 - Tilemap - observe select and copy, tile picker tool
+(layering) alpha tiles, paintbucket
+
+3:25 STOP(55min)
