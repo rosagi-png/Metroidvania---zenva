@@ -808,3 +808,10 @@ recap level design ui
 (layering) alpha tiles, paintbucket
 
 3:25 STOP(55min)
+
+
+16/10/26
+4:22pm
+lights
+
+UI - Canvaslayer - Texture progress Bar

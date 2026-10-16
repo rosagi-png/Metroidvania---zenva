@@ -1,5 +1,10 @@
 extends CharacterBody2D
 
+var health:= 5:
+	set(value):
+		health = value
+		$UI.set_health(health)
+
 var direction_x: float
 @export_category('move')
 @export var speed := 160
@@ -89,3 +94,7 @@ const GUN_DIRECTIONS = {
 	Vector2i(0,-1):  6,
 	Vector2i(1,-1):  7,
 }
+
+
+func _ready() -> void:
+	$UI.set_health(health)
