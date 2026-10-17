@@ -8,11 +8,14 @@ script = ExtResource("1_s4fn1")
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="." unique_id=1389868143]
 custom_minimum_size = Vector2(120, 15)
-custom_maximum_size = Vector2(120, 15)
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = -1
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 120.0
+offset_bottom = 15.0
 offset_transform_enabled = true
 max_value = 5.0
+value = 3.0
 nine_patch_stretch = true
 texture_under = ExtResource("1_jsomr")
 texture_progress = ExtResource("1_jsomr")

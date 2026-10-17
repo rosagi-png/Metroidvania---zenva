@@ -36,8 +36,9 @@ func hit():
 		
 
 
-func _on_collision_shape_2d_2_body_entered(body: Node2D) -> void:
+func _on_collision_shape_2d_2_body_entered(_body: Node2D) -> void:
 	pass # Replace with function body.
+	$"../Entities/Player.health -= 1 "
 	explode.emit(position)
 	queue_free()
 	'explode'

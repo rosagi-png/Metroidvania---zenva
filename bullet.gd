@@ -22,3 +22,4 @@ var adjusted_dir = Vector2i(round(raw_dir.x), round(raw_dir.y))
 func _on_body_entered(body: Node2D) -> void:
 	if 'hit' in body:
 		body.hit()
+		queue_free()
