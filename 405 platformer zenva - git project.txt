@@ -815,3 +815,26 @@ recap level design ui
 lights
 
 UI - Canvaslayer - Texture progress Bar
+
+25/10
+
+4:20pm
+
+crosshair - add sprite 2d under $Sprites
+			add script; func update(direction: Vector2)
+			
+			under player.gd - func _process(delta: float) - >
+							update ()' get local mouse position')
+
+Player script
+'crosshair distance' - export var under player
+ - also passed as second argument
+	under _process(_delta:float) -> void:
+
+	(under crosshair.gd update(position: vector2, distance)
+rounded - mouse position
+
+//offset shot round x/y
+
+- set offset for vertical/horizontal shot
+- normalize bullet speed for x/y combined

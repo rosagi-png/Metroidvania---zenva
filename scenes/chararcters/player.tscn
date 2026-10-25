@@ -2,7 +2,9 @@
 
 [ext_resource type="Texture2D" uid="uid://de5wf7al0hknv" path="res://graphics/characters/player.png" id="1_4sqeo"]
 [ext_resource type="Script" uid="uid://bo20rfcayu217" path="res://scenes/chararcters/player.gd" id="1_jpfxw"]
+[ext_resource type="Texture2D" uid="uid://otyoj5px7yk7" path="res://graphics/ui/crosshair.png" id="3_b2ayl"]
 [ext_resource type="Texture2D" uid="uid://dijla4pisrrw8" path="res://graphics/lights/main.png" id="3_ycaei"]
+[ext_resource type="Script" uid="uid://b863xpwmrgwhk" path="res://scenes/chararcters/crosshair.gd" id="4_64bui"]
 [ext_resource type="PackedScene" uid="uid://bkq5x8auwyv8n" path="res://scenes/levels/ui.tscn" id="4_scicp"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g4v7s"]
@@ -107,6 +109,11 @@ texture = ExtResource("1_4sqeo")
 hframes = 8
 vframes = 5
 frame = 26
+
+[node name="Crosshair" type="Sprite2D" parent="Sprites" unique_id=150524358]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_b2ayl")
+script = ExtResource("4_64bui")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=339946002]
 zoom = Vector2(4, 4)

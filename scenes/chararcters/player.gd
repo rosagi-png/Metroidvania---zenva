@@ -22,6 +22,11 @@ var gravity = 600
 @onready var jump_gravity: float = ((-2.0 * jump_height) / (jump_time_to_peak * jump_time_to_peak)) * -1.0
 @onready var fall_gravity: float = ((-2.0 * jump_height) / (jump_time_to_peak * jump_time_to_descent)) * -1.0
 
+@export_category('shooting')
+@export var crosshair_distance:= 50
+	
+
+
 
 signal shoot(pos: Vector2, dir: Vector2)
 
@@ -95,6 +100,8 @@ const GUN_DIRECTIONS = {
 	Vector2i(1,-1):  7,
 }
 
+func _process(_delta:float) -> void:
+	$Sprites/Crosshair.update(round(get_local_mouse_position().normalized()), crosshair_distance)
 
 func _ready() -> void:
 	$UI.set_health(health)
