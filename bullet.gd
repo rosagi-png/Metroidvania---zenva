@@ -2,12 +2,23 @@ extends Area2D
 
 var direction: Vector2
 var speed: int = 200
-const OFFSET = 16
+const OFFSET = 10
 
 func _physics_process(delta: float) -> void:
-	position += round(direction) * speed * delta
+	position += (direction) * speed * delta
+	#print (direction)
+	
+	var snapped_x = snappedf(direction.x, 0.1)
+	var snapped_y = snappedf(direction.y, 0.1)
+	var snap_direction = Vector2(snapped_x, snapped_y)
+	#print (snap_direction)
+	
+	#singel line ver
+	var snap_dir = direction.snapped(direction * 0.1)
+	print (snap_dir)
 	
 func setup(pos: Vector2, dir: Vector2):
+		
 		position = pos + dir * OFFSET
 		direction = dir
 		

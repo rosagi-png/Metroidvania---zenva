@@ -838,3 +838,18 @@ rounded - mouse position
 
 - set offset for vertical/horizontal shot
 - normalize bullet speed for x/y combined
+
+30/10
+
+4:20 explore bullet directional (vector2) snap
+
+ceil /only works in positive x direction
+
+5:04 #snapping individual components
+	var snapped_x = snappedf(direction.x, 0.1)
+	var snapped_y = snappedf(direction.y, 0.1)
+	var snap_direction = Vector2(snapped_x, snapped_y)
+	print (snap_direction)
+	#snappedf() - single line variant
+	
+var snap_dir = direction.snapped(direction.ONE * step_size)
